@@ -15,6 +15,7 @@ public class Commande {
         this.numCmd = numCmd;
         this.dateCmd = dateCmd;
         this.cli = cli;
+        listeArt = new ArrayList<>();
     }
     public boolean addArt(Article art){
         try{
@@ -60,12 +61,14 @@ public class Commande {
     public boolean saveArticles(String file) throws IOException {
         File f = new File(file);
         FileWriter fw = new FileWriter(f);
+
         String s = "";
         for(Article art : listeArt){
             s+=art.toXML();
         }
         s = "<commande num=\""+numCmd+"\">\n"+s+"</commande>";
         fw.write(s);
+        fw.flush();
         return true;
     }
 }

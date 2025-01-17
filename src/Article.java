@@ -23,9 +23,9 @@ public class Article implements Serializable {
     }
     public String toXML(){
         return "<article>\n"
-                +"<code> "+code+"</code>"
-                +"<libelle>"+libelle+"</libelle>"
-                +"<prix>"+prix+"</prix>"
+                +"\t<code> "+code+"</code>\n"
+                +"\t<libelle>"+libelle+"</libelle>\n"
+                +"\t<prix>"+prix+"</prix>\n"
                 +"</article>\n";
     }
 }
